@@ -1,0 +1,6 @@
+idea: read from export-like file?
+export with book id and without (csv)
+put stuff on website
+isbn validation?
+different screen sizes
+establish admin check on isbn?

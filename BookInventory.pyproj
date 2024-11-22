@@ -24,6 +24,8 @@
     <Folder Include="django\" />
     <Folder Include="django\BookInventory\" />
     <Folder Include="django\BookInventory\BookInventory\" />
+    <Folder Include="django\BookInventory\BookInventory\static\" />
+    <Folder Include="django\BookInventory\BookInventory\templates\" />
     <Folder Include="django\BookInventory\Books\" />
     <Folder Include="django\BookInventory\Books\migrations\" />
   </ItemGroup>
@@ -35,6 +37,9 @@
     <Compile Include="django\BookInventory\BookInventory\__init__.py" />
     <Compile Include="django\BookInventory\Books\admin.py" />
     <Compile Include="django\BookInventory\Books\apps.py" />
+    <Compile Include="django\BookInventory\Books\create_sample.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="django\BookInventory\Books\migrations\__init__.py" />
     <Compile Include="django\BookInventory\Books\models.py" />
     <Compile Include="django\BookInventory\Books\tests.py" />
@@ -43,7 +48,11 @@
     <Compile Include="django\BookInventory\manage.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="django\BookInventory\BookInventory\static\sample_books.csv" />
+    <Content Include="django\BookInventory\BookInventory\templates\index.html" />
     <Content Include="django\BookInventory\db.sqlite3" />
+    <Content Include="notes.txt" />
+    <Content Include="objectives.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

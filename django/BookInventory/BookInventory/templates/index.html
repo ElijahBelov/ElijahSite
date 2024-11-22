@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" type="image/ico" href="https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=32x32&file=study-icon.png&category_slug=education-school" />
+	<title>Books</title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Book Inventory</a>
+			</div>
+
+		</div>
+	</nav>
+
+	{% if book_list %}
+	<div class="container">
+		<div class="card-deck">
+			{% for book in book_list %}
+			<div class="card" style="width: 36rem;">
+				<div class="card-body bg-light">
+					<h5 class="card-title">
+						{{ book.title }}
+					</h5>
+					<div class="card-subtitle">{{ book.genre }}</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% else %}
+	<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
+	{% endif %}
+</body>
+</html>

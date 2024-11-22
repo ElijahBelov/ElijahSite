@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic.base import RedirectView
+from django.templatetags.static import static
 import Books.views
 
 urlpatterns = [
