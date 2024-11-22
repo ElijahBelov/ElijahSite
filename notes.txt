@@ -4,3 +4,4 @@ put stuff on website
 isbn validation?
 different screen sizes
 establish admin check on isbn?
+provide database set up commands
