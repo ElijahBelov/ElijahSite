@@ -1,7 +1,7 @@
 idea: read from export-like file?
-export with book id and without (csv)
-put stuff on website
-isbn validation?
+	can use this for project startup
 different screen sizes
 establish admin check on isbn?
-provide database set up commands
+provide database set up scripts
+
+to do: showcase

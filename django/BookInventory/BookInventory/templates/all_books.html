@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>All Books</title>
+	<link rel="shortcut icon" type="image/ico" href="https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=32x32&file=study-icon.png&category_slug=education-school" />
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{% url 'home' %}">Book Inventory</a>
+			</div>
+			<div class="nav-item">
+				<a class="navbar-brand" href="{% url 'new_book' %}">Add book</a>
+			</div>
+			<div class="nav-item">
+				<a class="navbar-brand" href="{% url 'download_books' %}">Export book list</a>
+			</div>
+			<div class="nav navbar-nav navbar-right">
+				<a class="navbar-brand" href="{% url 'home' %}">Back</a>
+			</div>
+		</div>
+	</nav>
+	<form action="" method="post">
+		{% csrf_token %}
+		<table class="table" id="table">
+			<thead>
+				<tr>
+					<th scope="col">
+						Entry ID
+					</th>
+					<th scope="col">
+						Title
+						<input type="text" class="form-control" name="title_filter" value="{{ filter_data.title }}">
+					</th>
+					<th scope="col">
+						Author
+						<input type="text" class="form-control" name="author_filter" value="{{ filter_data.author }}">
+					</th>
+					<th scope="col">
+						Genre
+						<input type="text" class="form-control" name="genre_filter" value="{{ filter_data.genre }}">
+					</th>
+					<th scope="col">
+						Publication Date
+							<input type="date" class="form-control" name="start_date" value="{{ filter_data.start_date }}">
+							<input type="date" class="form-control" name="end_date" value="{{ filter_data.end_date }}">
+						<p style="font-weight: normal;">Between above start and end dates</p>
+					</th>
+					<th scope="col" data-field="isbn">
+						ISBN
+					</th>
+					<th>
+						<button class="btn btn-primary" type="submit" name="submit">Filter</button>
+						<a class="btn btn-primary" href="{% url 'all_books' %}">Reset</a>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if all_books %}
+				{% for book in all_books %}
+				<tr>
+					<th scope="row">{{ book.entry_id }}</th>
+					<td>{{ book.title }}</td>
+					<td>{{ book.author }}</td>
+					<td>{{ book.genre }}</td>
+					<td>{{ book.pub_date }}</td>
+					<td>{{ book.isbn }}</td>
+				</tr>
+				{% endfor %}
+				{% else %}
+				<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
+				{% endif %}
+			</tbody>
+		</table>
+	</form>
+</body>

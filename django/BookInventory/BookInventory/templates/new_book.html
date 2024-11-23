@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>New Book</title>
+	<link rel="shortcut icon" type="image/ico" href="https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=32x32&file=study-icon.png&category_slug=education-school" />
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="{% url 'home' %}">Recent books</a>
+			</div>
+			<div class="nav navbar-nav navbar-right">
+				<a class="navbar-brand" href="{% url 'home' %}">Back</a>
+			</div>
+		</div>
+	</nav>
+	<form action="" method="post">
+		<div class="container">
+			{% csrf_token %}
+			<h1>New book</h1>
+			<hr>
+			<div class="form-group">
+				{% if form_data %}
+				<label for="title"><b>Title: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book title" name="title" value="{{ form_data.title }}" required>
+				<label for="author"><b>Author: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book author" name="author" value="{{ form_data.author }}" required>
+				<label for="genre"><b>Genre: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book genre" name="genre" value="{{ form_data.genre }}">
+				<label for="pub_date"><b>Publication date: </b></label>
+				<input type="date" class="form-control" placeholder="Enter book publication date" name="pub_date" value="{{ form_data.pub_date }}" required>
+				<label for="isbn"><b>ISBN: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book ISBN" name="isbn" value="{{ form_data.isbn }}">
+				{% else %}
+				<label for="title"><b>Title: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book title" name="title" required>
+				<label for="author"><b>Author: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book author" name="author" required>
+				<label for="genre"><b>Genre: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book genre" name="genre">
+				<label for="pub_date"><b>Publication date: </b></label>
+				<input type="date" class="form-control" placeholder="Enter book publication date" name="pub_date" required>
+				<label for="isbn"><b>ISBN: </b></label>
+				<input type="text" class="form-control" placeholder="Enter book ISBN" name="isbn">
+				{% endif %}
+				{% if message %}
+				<div class="alert alert-warning">
+					{{ message }}
+				</div>
+				{% endif %}
+				<div>
+					<button class="btn btn-primary" type="submit" name="submit" value="go_home">Save and return to homepage</button>
+					<button class="btn btn-primary" type="submit" name="submit" value="add_another">Save and add another</button>
+					<button class="btn btn-primary" type="submit" name="submit" value="see_all">Save and see all books</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+</body>

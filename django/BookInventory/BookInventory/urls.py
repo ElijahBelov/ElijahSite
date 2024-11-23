@@ -22,6 +22,9 @@ import Books.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("index/", Books.views.index, name="index"),
-    path("", Books.views.home, name="home"),
+    path("", Books.views.home),
     path("home/", Books.views.home, name="home"),
+    path("new_book/", Books.views.new_book, name="new_book"),
+    path("books/", Books.views.all_books, name="all_books"),
+    path("books/download", Books.views.download, name="download_books"),
 ]

@@ -11,15 +11,15 @@
 	<nav class="navbar navbar-light bg-light">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Book Inventory</a>
+				<a class="navbar-brand" href="#">Recent books</a>
 			</div>
 
 		</div>
 	</nav>
 
-	{% if book_list %}
 	<div class="container">
 		<div class="card-deck">
+			{% if book_list %}
 			{% for book in book_list %}
 			<div class="card" style="width: 36rem;">
 				<div class="card-body bg-light">
@@ -30,10 +30,16 @@
 				</div>
 			</div>
 			{% endfor %}
+			{% else %}
+			<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
+			{% endif %}
+			<div class="card text-center" style="width: 36rem;">
+				<div class="card-body bg-light">
+					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg">Add Book</a>
+				</div>
+			</div>
 		</div>
+		<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-dark">See all books</a>
 	</div>
-	{% else %}
-	<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
-	{% endif %}
 </body>
 </html>

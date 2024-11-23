@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="django\BookInventory\BookInventory\static\sample_books.csv" />
+    <Content Include="django\BookInventory\BookInventory\templates\all_books.html" />
     <Content Include="django\BookInventory\BookInventory\templates\index.html" />
+    <Content Include="django\BookInventory\BookInventory\templates\new_book.html" />
     <Content Include="django\BookInventory\db.sqlite3" />
     <Content Include="notes.txt" />
     <Content Include="objectives.txt" />
