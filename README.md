@@ -55,7 +55,7 @@ Notes:
 Further comments on objectives:
 
   1. Table has the required columns
-  2. SQLite is already set up, with a few books in the table
+  2. SQLite is already set up, with a few books in the table. It was previously set up with django's ORM, which mapped python classes to database entries and took care of the SQL commands.
   3. To start adding a new book, click the "Add Book" button on the home page or visit http://localhost:8000/new_book/
      * If the entered data is valid, the book entry will be added to the database
      * The data is valid if there is a name, author, and publication date, and if there is an ISBN it is valid
