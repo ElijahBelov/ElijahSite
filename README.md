@@ -91,6 +91,13 @@ Further comments on objectives:
      * retrieve at http://localhost:8000/books/
      * update at localhost:8000/admin
      * delete at localhost:8000/admin
-  9.
 
 Design decisions:
+1. Using django makes maneuvering the database, tables, and entries easy
+2. SQLite is the default database
+3. Django makes web apps easy to design
+4. The webpages were chosen by their purposes, mostly distinct, but for example the filtered list and all books share a space
+5. ISBN was left optional because the initial example books I wanted to use wre published before the ISBN was established and thus didn't have any
+6. Filtering was chosen to be inclusive as opposed to exact
+7. Export was chosen to be csv
+8. For CRUD operations, Update and Delete were not specified for regular users, so at the moment only admins have access
