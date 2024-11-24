@@ -73,10 +73,10 @@ Further comments on objectives:
      * Click "Reset" and then "Export book list" will get all the books in the database
      * books.csv will have a header
   5. These are reachable from the home page
-* Add Book Form: at http://localhost:8000/new_book/
-* Filter Form: at http://localhost:8000/books/
-* Books List: at http://localhost:8000/books/
-* Export Button: "Export book list" on http://localhost:8000/books/
+     * Add Book Form: at http://localhost:8000/new_book/
+     * Filter Form: at http://localhost:8000/books/
+     * Books List: at http://localhost:8000/books/
+     * Export Button: "Export book list" on http://localhost:8000/books/
   7. Book entry constraints:
      * entry id is auto generated to be a unique primary key
      * title is a string with max length of 100
@@ -85,11 +85,11 @@ Further comments on objectives:
      * pub_date is a date
      * isbn is a string with max length 17
   8. CRUD:
-* create at http://localhost:8000/new_book/
-* this handles invalid inputs
-* retrieve at http://localhost:8000/books/
-* update at localhost:8000/admin
-* delete at localhost:8000/admin
+     * create at http://localhost:8000/new_book/
+     * this handles invalid inputs
+     * retrieve at http://localhost:8000/books/
+     * update at localhost:8000/admin
+     * delete at localhost:8000/admin
   9.
 
 Design decisions:
