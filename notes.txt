@@ -2,7 +2,6 @@ idea: read from export-like file?
 	can use this for project startup
 different screen sizes
 establish admin check on isbn?
-provide database set up scripts
 
 to do: showcase
 make optional fields optional
