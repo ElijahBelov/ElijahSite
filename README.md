@@ -25,3 +25,21 @@ Check it out:
   * open browser
   
   * browse to localhost:8000/
+
+Notes:
+
+  * database used is SQLite
+
+  * database is already setup
+
+  * but if you want to make changes to the tables or record details
+
+  * use the usual django commands
+    
+  *   CLI:
+
+  * python manage.py makemigrations
+
+  * python manage.py migrate
+
+  * django handles the database commands
