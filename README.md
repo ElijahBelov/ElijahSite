@@ -91,6 +91,7 @@ Further comments on objectives:
      * retrieve at http://localhost:8000/books/
      * update at localhost:8000/admin
      * delete at localhost:8000/admin
+
 Design decisions:
   1. Using django makes maneuvering the database, tables, and entries easy
   2. SQLite is the default database
