@@ -99,5 +99,5 @@ Design decisions:
   4. The webpages were chosen by their purposes, mostly distinct, but for example the filtered list and all books share a space
   5. ISBN was left optional because the initial example books I wanted to use wre published before the ISBN was established and thus didn't have any
   6. Filtering was chosen to be inclusive as opposed to exact
-  7. Export was chosen to be csv
+  7. Export was chosen to be csv, with a header
   8. For CRUD operations, Update and Delete were not specified for regular users, so at the moment only admins have access
