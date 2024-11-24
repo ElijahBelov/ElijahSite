@@ -14,6 +14,8 @@ Have Django
 
 Start server:
 
+  * cd to folder containing manage.py then
+
   * CLI: python manage.py runserver 8000
   
   * note: 8000 is a semi-arbitrary port
