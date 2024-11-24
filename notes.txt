@@ -5,3 +5,4 @@ establish admin check on isbn?
 provide database set up scripts
 
 to do: showcase
+make optional fields optional
