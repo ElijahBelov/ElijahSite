@@ -4,22 +4,22 @@ Usage:
 
 Download files 
 
-  Either with github website or git clone CLI
+  * Either with github website or git clone CLI
 
 Have python
 
 Have Django
 
-  CLI: pip install django
+  * CLI: pip install django
 
 start server:
 
-  CLI: python manage.py runserver 8000
+  * CLI: python manage.py runserver 8000
   
-  note: 8000 is a semi-arbitrary port
+  * note: 8000 is a semi-arbitrary port
 
 check it out:
 
-  open browser
+  * open browser
   
-  browse to localhost:8000/
+  * browse to localhost:8000/
