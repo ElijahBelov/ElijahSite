@@ -77,6 +77,7 @@ Further comments on objectives:
      * Filter Form: at http://localhost:8000/books/
      * Books List: at http://localhost:8000/books/
      * Export Button: "Export book list" on http://localhost:8000/books/
+  6. The interface is responsively design using django and bootstrap
   7. Book entry constraints:
      * entry id is auto generated to be a unique primary key
      * title is a string with max length of 100
