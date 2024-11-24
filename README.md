@@ -12,13 +12,13 @@ Have Django
 
   * CLI: pip install django
 
-start server:
+Start server:
 
   * CLI: python manage.py runserver 8000
   
   * note: 8000 is a semi-arbitrary port
 
-check it out:
+Check it out:
 
   * open browser
   
