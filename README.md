@@ -94,7 +94,7 @@ Further comments on objectives:
 
 Design decisions:
   1. Using django makes maneuvering the database, tables, and entries easy
-  2. SQLite is the default database
+  2. SQLite is the default database with django
   3. Django makes web apps easy to design
   4. The webpages were chosen by their purposes, mostly distinct, but for example the filtered list and all books share a space
   5. ISBN was left optional because the initial example books I wanted to use wre published before the ISBN was established and thus didn't have any
