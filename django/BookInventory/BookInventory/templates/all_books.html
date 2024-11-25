@@ -29,33 +29,46 @@
 		<table class="table" id="table">
 			<thead>
 				<tr>
-					<th scope="col">
+					<th scope="col" class="align-middle">
 						Entry ID
 					</th>
-					<th scope="col">
+					<th scope="col" class="align-top">
 						Title
 						<input type="text" class="form-control" name="title_filter" value="{{ filter_data.title }}">
 					</th>
-					<th scope="col">
+					<th scope="col" class="align-top">
 						Author
 						<input type="text" class="form-control" name="author_filter" value="{{ filter_data.author }}">
 					</th>
-					<th scope="col">
+					<th scope="col" class="align-top">
 						Genre
 						<input type="text" class="form-control" name="genre_filter" value="{{ filter_data.genre }}">
 					</th>
-					<th scope="col">
+					<th scope="col" class="align-top">
 						Publication Date
+						<ul class="list-inline">
+							<li class="list-inline-item">
 							<input type="date" class="form-control" name="start_date" value="{{ filter_data.start_date }}">
+							</li>
+							<li class="list-inline-item">
 							<input type="date" class="form-control" name="end_date" value="{{ filter_data.end_date }}">
-						<p style="font-weight: normal;">Between above start and end dates</p>
+							</li>
+						</ul>
+						<small>Filter between above start and end dates</small>
 					</th>
-					<th scope="col" data-field="isbn">
+					<th scope="col" data-field="isbn" class="align-middle">
 						ISBN
 					</th>
-					<th>
-						<button class="btn btn-primary" type="submit" name="submit">Filter</button>
-						<a class="btn btn-primary" href="{% url 'all_books' %}">Reset</a>
+					<th class="align-top">
+						&nbsp;
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<button class="btn btn-primary btn-success" type="submit" name="submit">Filter</button>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-primary btn-danger" href="{% url 'all_books' %}">Reset</a>
+							</li>
+						</ul>
 					</th>
 				</tr>
 			</thead>

@@ -35,11 +35,13 @@
 			{% endif %}
 			<div class="card text-center" style="width: 36rem;">
 				<div class="card-body bg-light">
-					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg">Add Book</a>
+					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg btn-dark">Add Book</a>
 				</div>
 			</div>
 		</div>
+		<div class="pt-3">
 		<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-dark">See all books</a>
+		</div>
 	</div>
 </body>
 </html>
