@@ -49,8 +49,6 @@
     <Content Include="django\BookInventory\BookInventory\templates\new_book.html" />
     <Content Include="django\BookInventory\db.sqlite3" />
     <Content Include="django\BookInventory\requirements.txt" />
-    <Content Include="notes.txt" />
-    <Content Include="objectives.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
