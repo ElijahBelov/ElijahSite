@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /BookInventory.sln
 /BookInventory.pyproj
+/django/BookInventory/db.sqlite3
