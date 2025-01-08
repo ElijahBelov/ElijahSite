@@ -3,6 +3,13 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#django stuff
+django/BookInventory/.env
+
+#gunicorn stuff
+django/BookInventory/my-gunicorn.pp
+django/BookInventory/my-gunicorn.te
+
 # User-specific files
 *.rsuser
 *.suo
