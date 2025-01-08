@@ -26,7 +26,7 @@ SECRET_KEY = '#_s_fvh0(=+ot4ug32%b^!q(rwqbf&ndx+m_ktnh^d7l0a9v)z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca']
 
 
 # Application definition
