@@ -5,6 +5,7 @@
 
 #django stuff
 django/BookInventory/.env
+ django/BookInventory/admin
 
 #gunicorn stuff
 django/BookInventory/my-gunicorn.pp

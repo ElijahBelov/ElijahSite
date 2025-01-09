@@ -19,8 +19,8 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
-load_dotenv(env_path)
-
+#load_dotenv(env_path)
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -32,9 +32,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
+#DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca', '40.233.90.119']
+ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca', '40.233.90.119', 'localhost', '0.0.0.0'] #[::]
 
 
 # Application definition
@@ -42,6 +43,8 @@ ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca', '40.233.90.119']
 INSTALLED_APPS = [
     'Books.apps.BooksConfig',
     'django.contrib.admin',
+    #'django.contrib.admin.static',
+    #'django.contrib.admin.static.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -128,5 +131,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+#STATICFILES_DIRS = (BASE_DIR / 'static', BASE_DIR / 'static/admin',)
+
