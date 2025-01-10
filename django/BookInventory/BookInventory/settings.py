@@ -35,8 +35,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8
 #DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca', '40.233.90.119', 'localhost', '0.0.0.0'] #[::]
-
+ALLOWED_HOSTS = ["elijahbelov.ca",'www.elijahbelov.ca', '40.233.90.119', 'localhost', '0.0.0.0']
 
 # Application definition
 

@@ -28,7 +28,7 @@ urlpatterns = [
     path("new_book/", Books.views.new_book, name="new_book"),
     path("books/", Books.views.all_books, name="all_books"),
     path("books/download", Books.views.download, name="download_books"),
-    path("index/get_profile", Books.views.get_profile, name="get_profile"),
+    path("get_profile", Books.views.get_profile, name="get_profile"),
     path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
