@@ -13,11 +13,28 @@
 			<div class="navbar-header">
 				<a class="navbar-brand">Recent books</a>
 			</div>
-			<div class="nav navbar-nav navbar-right">
-				<a class="navbar-brand" href="{% url 'home' %}">Login</a>
+			<div class="nav navbar-nav navbar-middle">
+				<a class="navbar-brand" href="{% url 'get_profile' %}">Get animal</a>
 			</div>
-		</div>
-	</nav>
+			{% if user.is_authenticated %}
+			<div class="nav navbar-nav navbar-right">User: {{ user.get_username }}</div>
+				<div class="nav navbar-nav navbar-right">
+					<form id="logout-form" method="post" action="{% url 'logout' %}" class="form-inline my-2 my-lg-0">
+						{% csrf_token %}
+						<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+					</form>
+				</div>
+				{% else %}
+				<div class="nav navbar-nav navbar-right">
+					<form id="login-form" method="get" action="{% url 'login' %}?next={{ request.path }}" class="form-inline my-2 my-lg-0">
+						{% csrf_token %}
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+					</form>
+					<!--<a class="navbar-brand" href="{% url 'login' %}?next={{ request.path }}">Login</a>-->
+				</div>
+				{% endif %}
+			</div>
+</nav>
 
 	<div class="container">
 		<div class="card-deck">
@@ -35,15 +52,23 @@
 			{% else %}
 			<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
 			{% endif %}
+			{% if user.is_authenticated %}
 			<div class="card text-center" style="width: 36rem;">
 				<div class="card-body bg-light">
 					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg btn-dark">Add Book</a>
 				</div>
 			</div>
+			{% endif %}
 		</div>
 		<div class="pt-3">
-		<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-dark">See all books</a>
+			<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-dark">See all books</a>
 		</div>
+		{% if got_animal %}
+			<div class="rounded-circle col d-flex align-items-center justify-content-center" style="height: 125px; width: 125px; {{ profile_background }}">
+				{% load static %}
+					<img style="height: 100px; width: 100px;" src="{{ MEDIA_URL }}{{ got_animal }}" alt="My image">
+			</div>
+		{% endif %}
 	</div>
 </body>
 </html>

@@ -1,26 +1,42 @@
+import os
 import re
 import csv
 
+from django.conf import settings
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.cache import cache
+from django.views.static import serve
+
+from django.contrib.auth.decorators import login_required
+
+from django.template import RequestContext
+
+from .logic import profile_pic
 
 from .models import Book
 
 # Create your views here.
 
 
-def index(request):
+def home(request):
 	books = Book.objects.all().order_by("-pub_date")[:4]
 	context = {"book_list": books}
-
 	return render(request, "index.html", context)
 
+def gohome(request):
+	return redirect("home")
 
-def home(request):
-	return redirect("index")
+def index(request):
+	return redirect("home")
 
+def get_profile(request):
+	books = Book.objects.all().order_by("-pub_date")[:4]
+	context = {"book_list": books}
+	context["got_animal"], context["profile_background"] = profile_pic.get_animal(), profile_pic.get_gradient()
+	return render(request, "index.html", context) #, context_instance = RequestContext(request)
 
+@login_required
 def new_book(request):
 	if request.method == "GET":
 		return render(request, "new_book.html")
