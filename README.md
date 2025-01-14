@@ -1,3 +1,3 @@
-[elijahbelov.ca](elijahbelov.ca)
+[elijahbelov.ca](https://elijahbelov.ca)
 
 main branch is production
