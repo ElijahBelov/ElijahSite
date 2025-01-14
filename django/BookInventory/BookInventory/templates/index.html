@@ -4,43 +4,60 @@
 	{% load static %}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/ico" href="https://uxwing.com/wp-content/themes/uxwing/download/resize.php?size=32x32&file=study-icon.png&category_slug=education-school" />
 	<title>Books</title>
 </head>
 <body>
-	<nav class="navbar navbar-light bg-light">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand">Recent books</a>
-			</div>
-			<div class="nav navbar-nav navbar-middle">
-				<a class="navbar-brand" href="{% url 'get_profile' %}">Get animal</a>
-			</div>
+	<div class="nav-item dropdown">
+		<a href="#" class="nav-link dropdown-toggle btn-info display-4" data-bs-toggle="dropdown">Menu</a>
+		<ul class="dropdown-menu w-100">
+			<li class="ml-3 display-4">
+				<a href="{% url 'get_profile' %}">Get animal</a>
+			</li>
+			<li class="dropdown-divider"></li>
 			{% if user.is_authenticated %}
-			<div class="nav navbar-nav navbar-right">User: {{ user.get_username }}</div>
-				<div class="nav navbar-nav navbar-right">
-					<form id="logout-form" method="post" action="{% url 'logout' %}" class="form-inline my-2 my-lg-0">
-						{% csrf_token %}
-						<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
-					</form>
-				</div>
-				{% else %}
-				<div class="nav navbar-nav navbar-right">
-					<form id="login-form" method="get" action="{% url 'login' %}?next={{ request.path }}" class="form-inline my-2 my-lg-0">
-						{% csrf_token %}
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-					</form>
-					<!--<a class="navbar-brand" href="{% url 'login' %}?next={{ request.path }}">Login</a>-->
-				</div>
-				{% endif %}
-			</div>
-</nav>
+			<li class="ml-3 display-5">User: {{ user.get_username }}</li>
+			<li class="ml-3 display-4">
+				<form id="logout-form" method="post" action="{% url 'logout' %}" class="form-inline my-2 my-lg-0">
+					{% csrf_token %}
+					<button class="btn btn-outline-danger my-2 my-sm-0 btn-lg" type="submit">Logout</button>
+				</form>
+			</li>
+			{% else %}
+			<li class="ml-3 display-4">
+				<form id="login-form" method="get" action="{% url 'login' %}?next={{ request.path }}" class="form-inline my-2 my-lg-0">
+					{% csrf_token %}
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+				</form>
 
+			</li>
+			{% endif %}
+		</ul>
+	</div>
 	<div class="container">
-		<div class="card-deck">
+		{% if got_animal %}
+		<div class="pt-2 pb-3">
+			<a class="display-4" href="{% url 'home' %}">Remove</a>
+		</div>
+		{% else %}
+		<div class="pt-2">
+			<p class="display-4" href="#">Recent books</p>
+		</div>
+		{% endif %}
+		<div class="card-deck py-2">
+			{% if got_animal %}
+			<div class="card bg-light align-items-center">
+				<div class="card-body">
+					<div class="rounded-circle col d-flex align-items-center justify-content-center" style="height: 125px; width: 125px; {{ profile_background }}">
+						<img style="height: 100px; width: 100px;" src="https://elijahbelov.ca/static/animalicons/{{ got_animal }}" alt="Animal">
+					</div>
+				</div>
+			</div>
+			{% endif %}
 			{% if book_list %}
 			{% for book in book_list %}
-			<div class="card" style="width: 36rem;">
+			<div class="card">
 				<div class="card-body bg-light">
 					<h5 class="card-title">
 						{{ book.title }}
@@ -53,21 +70,17 @@
 			<div style="margin-left: 8.333333%"><p>No books are available.</p></div>
 			{% endif %}
 			{% if user.is_authenticated %}
-			<div class="card text-center" style="width: 36rem;">
+			<div class="card text-center">
 				<div class="card-body bg-light">
-					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg btn-dark">Add Book</a>
+					<a href="{% url 'new_book' %}" role="button" class="btn btn-primary btn-lg btn-info">Add Book</a>
 				</div>
 			</div>
 			{% endif %}
 		</div>
 		<div class="pt-3">
-			<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-dark">See all books</a>
+			<a href="{% url 'all_books' %}" role="button" class="btn btn-primary btn-lg btn-info">See all books</a>
 		</div>
-		{% if got_animal %}
-			<div class="rounded-circle col d-flex align-items-center justify-content-center" style="height: 125px; width: 125px; {{ profile_background }}">
-					<img style="height: 100px; width: 100px;" src="https://elijahbelov.ca/static/animalicons/{{ got_animal }}" alt="My image">
-			</div>
-		{% endif %}
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
